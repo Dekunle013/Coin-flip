@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heads or Tail</title>
+  </head>
+  <body>
+    <script>
+      const randomNumber = Math.random();
+      let computerPick = "";
+      let guess = "tails";
+      let result;
+
+      computerPick = randomNumber < 0.5 ? "heads" : "tails";
+      result =
+        guess === computerPick ? "You guessed right!" : "Sorry, try again.";
+      console.log(
+        `Computer flipped: ${computerPick}.\nYou guessed: ${guess}.\n ${result}`
+      );
+    </script>
+  </body>
+</html>
