@@ -10,6 +10,12 @@
 
     <button onclick="playGame('tails')">Tails</button>
 
+    <p class="js-display"></p>
+
+    <p class="js-result"></p>
+
+    <p class="js-score"></p>
+
     <button
       onclick="
         score = {
@@ -17,6 +23,9 @@
           losses: 0,
         };
         localStorage.setItem('score', JSON.stringify(score));
+        document.querySelector('.js-display').innerHTML = '';
+        document.querySelector('.js-result').innerHTML = '';
+        document.querySelector('.js-score').innerHTML = '';
       "
     >
       RESET
@@ -49,9 +58,13 @@
 
         localStorage.setItem("score", JSON.stringify(score));
 
-        alert(
-          `Computer flipped: ${computerPick}.\nYou guessed: ${guess}.\n ${result}\nWins: ${score.wins}, Losses: ${score.losses}`,
-        );
+        document.querySelector(".js-display").innerHTML =
+          `Computer flipped: ${computerPick}.\nYou guessed: ${guess}.`;
+
+        document.querySelector(".js-result").innerHTML = result;
+
+        document.querySelector(".js-score").innerHTML =
+          `Wins: ${score.wins}, Losses: ${score.losses}`;
       }
     </script>
   </body>
